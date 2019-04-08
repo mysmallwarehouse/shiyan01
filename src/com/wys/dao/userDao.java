@@ -40,15 +40,16 @@ public class userDao {
 		}
 		return n;
 	}
-<<<<<<< HEAD
-=======
 
 	
 	
 	
 	
 /**
- * ÓÃ‘ôµÇä›	
+ * ÓÃ»§µÇÂ¼
+ * @param userLogname
+ * @param userPwd
+ * @return
  */
 	
 	public User login(String userLogname,String userPwd) {
@@ -85,40 +86,6 @@ public class userDao {
 						
 
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
->>>>>>> branch 'master' of https://github.com/mysmallwarehouse/shiyan1.git
-	
 	
 
 }
