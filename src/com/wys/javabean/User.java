@@ -19,9 +19,7 @@ public class User {
 	private int userRole;
 	private int userState;
 
-	public User() {
-
-	}
+	public User() {} //无参构造
 
 	public User(String userLogname, String userPwd, String userRealname, String userEmail, int userRole,
 			int userState) {

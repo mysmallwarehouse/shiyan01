@@ -51,7 +51,7 @@ function validate(){
 </div>
 <div class="formbody">
   <div class="usual">
-  <form name="frm" action="companyList.html" method="post" enctype="multipart/form-data" onsubmit="return validate();">
+  <form name="frm" action="../companyAddServlet" method="post" enctype="multipart/form-data" onsubmit="return validate();">
     <div class="tabson">
       <ul class="forminfo">
       	<li>

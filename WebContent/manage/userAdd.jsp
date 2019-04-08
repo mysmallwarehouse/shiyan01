@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <title>添加用户</title>
+<link href="../css/manageadmin.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div class="place"> <span>位置：</span>
@@ -31,6 +32,8 @@
           <input name="userRealname" type="text" class="dfinput" style="width:518px;"/>
         </li>
         <li>
+        
+        
           <label>邮箱<b>*</b></label>
           <input name="userEmail" type="text" class="dfinput" style="width:518px;"/>
         </li>

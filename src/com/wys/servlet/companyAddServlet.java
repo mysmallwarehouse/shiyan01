@@ -42,10 +42,21 @@ public class companyAddServlet extends HttpServlet {
 		String companySize = request.getParameter("companySize");
 		String companyType = request.getParameter("companyType");
 		String companyBrief = request.getParameter("companyBrief");
-		int companyState = (request.getParameter("companyState") == null) ? 1
+		int companyState = (request.getParameter("companyState") == null) ?3
 				: Integer.parseInt(request.getParameter("companyState"));
-		int companySort = (request.getParameter("companySort") == null) ? 0
+		int companySort = (request.getParameter("companySort") == null) ?0
 				: Integer.parseInt(request.getParameter("companySort"));
+		int companyViewnum = 0;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		// 获取上传文件域
 		Part part = request.getPart("companyPic");
 		// 获取上传文件名称
@@ -62,18 +73,23 @@ public class companyAddServlet extends HttpServlet {
 			f.mkdirs();
 		part.write(filepath + "/" + newFileName);
 		// 定义一个用来封装企业信息的JavaBean
-		Company company = new Company(companyName, companyArea, companySize, companyType, companyBrief, companyState,
-				companySort, 0, newFileName);
+		Company company = new Company(companyName, companyArea, companySize, companyType, companyBrief, companyState,companySort, 0, newFileName);
 
 		
 		// 企业信息添加
 		CompanyDao dao = new CompanyDao();
 
-		dao.save(company);
-		// 添加成功提示和响应结果导向
-		out.print("<script type='text/javascript'>");
-		out.print("alert('企业信息添加成功！');");
-		out.print("window.location='manage/companyList.html';");
-		out.print("</script>");
+		int n = dao.save(company);
+		//跳转
+		if(n==1) {
+			response.sendRedirect(request.getContextPath()+"/manage/companyList.html");
+		}else {
+			response.sendRedirect(request.getContextPath()+"/manage/error.jsp");
+		}
+		
+//		out.print("<script type='text/javascript'>");
+//		out.print("alert('企业信息添加成功！');");
+//		out.print("window.location='manage/companyList.html';");
+//		out.print("</script>");
 	}
 }

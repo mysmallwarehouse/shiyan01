@@ -10,7 +10,7 @@ public class DBUtil {
 
 	static {
 		try {
-			Class.forName("org.gjt.mm.mysql.Driver"); //连接数据库驱动类
+			Class.forName("com.mysql.jdbc.Driver"); // 连接数据库驱动类
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -19,7 +19,7 @@ public class DBUtil {
 	public static Connection getConnection() {
 		Connection conn = null;
 		try {
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/itoffer", "root", "123456789"); //url  username   password
+			 conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/itoffer", "root", "123456789"); // url username password																										 																											
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -50,12 +50,6 @@ public class DBUtil {
 		}
 	}
 
-	public static void main(String[] args) {
-		System.out.println("打开连接");
-		Connection conn = DBUtil.getConnection();
-		System.out.println("获取的Connection：" + conn);
-		System.out.println("关闭连接");
-		DBUtil.closeJDBC(null, null, conn);
-	}
+	
 
 }
